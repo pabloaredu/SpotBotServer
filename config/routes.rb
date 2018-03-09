@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'main/index'
+
+  root 'main#index'
+
 # This route sends requests to our naked url to the *cool* action in the *gif* controller.
 
 
