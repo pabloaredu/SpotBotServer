@@ -10,19 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309231707) do
+ActiveRecord::Schema.define(version: 20180310000748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "parking_areas", force: :cascade do |t|
+    t.string "parking_area_name"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.integer "lot_id"
     t.integer "total_spaces_available"
     t.integer "total_accessible_spaces"
     t.text "parking_area_information"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "spots", force: :cascade do |t|
+    t.string "label"
+    t.boolean "occupied"
+    t.boolean "accessible"
+    t.text "spot_information"
+    t.bigint "parking_area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parking_area_id"], name: "index_spots_on_parking_area_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,4 +53,5 @@ ActiveRecord::Schema.define(version: 20180309231707) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "spots", "parking_areas"
 end

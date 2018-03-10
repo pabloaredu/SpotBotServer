@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :parking_areas, only: [:index]
+
   get 'main/index'
 
   root 'main#index'
