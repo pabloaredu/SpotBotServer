@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    Rails.logger.info params
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
