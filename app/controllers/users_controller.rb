@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     Rails.logger.debug params.inspect
 
-    Rails.logger.info "This are the params: #{params[:user]}"
+    Rails.logger.info "This are the params: #{params}"
     # user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
     # if user.save
     #   session[:user_id] = user.id
