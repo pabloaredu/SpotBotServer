@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
 
-  skip_before_action :verify_authenticity_token
-
   def new
   end
 
   def create
-    Rails.logger.info params
-    user = User.new(user_params)
+    Rails.logger.info params.user
+    user = User.new(params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
     if user.save
       session[:user_id] = user.id
       redirect_to '/'
@@ -18,7 +16,7 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:name, :license_plate, :password, :password_confirmation, :email)
-  end
+  # def user_params
+  #   params.require(:user).permit(:name, :license_plate, :password, :password_confirmation, :email)
+  # end
 end
