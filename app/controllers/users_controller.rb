@@ -5,9 +5,8 @@ class UsersController < ApplicationController
 
   def create
 
-    params.each do |key,value|
-      Rails.logger.info "Param #{key}: #{value}"
-    end
+    Rails.logger.debug params.inspect
+
     Rails.logger.info "This are the params: #{user_params}"
     # user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
     # if user.save
@@ -28,6 +27,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :license_plate, :password, :password_confirmation, :email)
+    params.require(:users).permit(:name, :license_plate, :password, :password_confirmation, :email)
   end
 end
