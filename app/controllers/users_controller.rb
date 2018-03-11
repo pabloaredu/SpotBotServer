@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     # puts params
     # puts params.user
     # puts JSON.parse params
-    Rails.logger.info "This are the params: #{JSON.parse params}"
+    Rails.logger.info "This are the params: #{params[:name]}"
     # user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
     # if user.save
     #   session[:user_id] = user.id
