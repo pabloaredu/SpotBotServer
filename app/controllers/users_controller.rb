@@ -4,8 +4,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    Rails.logger.info params.user
-    user = User.new(params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
+    puts "WE ARE HERE!!!!! **************************************"
+    puts params
+    puts params.user
+    puts JSON.parse params
+    user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
     if user.save
       session[:user_id] = user.id
       redirect_to '/'
