@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     # puts params
     # puts params.user
     # puts JSON.parse params
-    Rails.logger.info params
+    Rails.logger.info params[:user]
     # user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
     # if user.save
     #   session[:user_id] = user.id
@@ -16,6 +16,9 @@ class UsersController < ApplicationController
     # else
     #   redirect_to '/signup'
     # end
+
+    # Client.new(params[:client])
+
     render json: {
       status: 200,
       message: "Hello there!",
