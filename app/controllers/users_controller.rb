@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    # puts "WE ARE HERE!!!!! **************************************"
-    # puts params
-    # puts params.user
-    # puts JSON.parse params
-    Rails.logger.info "This are the params: #{params[:user]}"
+
+    # params.each do |key,value|
+    #   Rails.logger.warn "Param #{key}: #{value}"
+    # end
+    Rails.logger.info "This are the params: #{params.to_h}"
     # user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
     # if user.save
     #   session[:user_id] = user.id
