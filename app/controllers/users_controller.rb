@@ -7,14 +7,14 @@ class UsersController < ApplicationController
     puts "WE ARE HERE!!!!! **************************************"
     puts params
     puts params.user
-    puts JSON.parse params
-    user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
-    if user.save
-      session[:user_id] = user.id
-      redirect_to '/'
-    else
-      redirect_to '/signup'
-    end
+    # puts JSON.parse params
+    # user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
+    # if user.save
+    #   session[:user_id] = user.id
+    #   redirect_to '/'
+    # else
+    #   redirect_to '/signup'
+    # end
   end
 
   private
