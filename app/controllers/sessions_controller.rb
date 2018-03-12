@@ -1,6 +1,12 @@
 class SessionsController < ApplicationController
   # app/controllers/sessions_controller.rb
   def new
+    @user = User.find_by_email([params[:email]])
+
+    render json: {
+      status: 200,
+      message: @user,
+    }.to_json
   end
 
   def create
