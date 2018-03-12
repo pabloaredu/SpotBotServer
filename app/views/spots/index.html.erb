@@ -1,7 +1,7 @@
 <h1> Hello World! <h1>
 
-<%= button_to "Show only accessible spaces", '/spots', method: :get, params: { accessibility: 'yes' } %>
-<%= button_to "Show only non-accessible spaces", '/spots', method: :get, params: { accessibility: 'no' } %>
+<%= button_to "Show accessible spaces", '/spots', method: :get, params: { accessibility: 'yes' } %>
+<%= button_to "Show non-accessible spaces", '/spots', method: :get, params: { accessibility: 'no' } %>
 
 
   <% @spots.each do |spot| %>

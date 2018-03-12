@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :spots, only: [:index]
 
+  resources :faqs, only: [:index]
+
+  resources :my_account, only: [:index]
+
   get 'main/index'
 
   root 'main#index'
@@ -20,7 +24,7 @@ Rails.application.routes.draw do
     post '/login' => 'sessions#create'
     get '/logout' => 'sessions#destroy'
 
-    get '/spots?accessibility=true' => 'spots#index'
+    # get '/spots?accessi' => 'spots#index'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
