@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     Rails.logger.debug params.inspect
 
     Rails.logger.info "This are the params: #{params}"
-    # user = User.new (params.user.name, params.user.license_plate, params.user.password, params.user.password_confirmation, params.user.email)
-    # if user.save
+    # @user = User.new (user_params)
+    # if @user.save
     #   session[:user_id] = user.id
     #   redirect_to '/'
     # else
@@ -27,6 +27,6 @@ class UsersController < ApplicationController
   private
 
   # def user_params
-  #   params.require(:users).permit(:name, :license_plate, :password, :password_confirmation, :email)
+  #   params.require(:user).permit(:name, :license_plate, :password, :password_confirmation, :email)
   # end
 end

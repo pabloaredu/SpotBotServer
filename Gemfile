@@ -20,6 +20,7 @@ end
 
 gem 'rails_12factor'
 
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
