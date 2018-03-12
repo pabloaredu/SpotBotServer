@@ -1,0 +1,13 @@
+<h1> Hello World! <h1>
+
+<%= button_to "Show only accessible spaces", '/spots', method: :get, params: { accessibility: 'yes' } %>
+<%= button_to "Show only non-accessible spaces", '/spots', method: :get, params: { accessibility: 'no' } %>
+
+
+  <% @spots.each do |spot| %>
+<li> <%= spot.label %> , <%= spot.occupied %> ,
+  <%= spot.accessible %>,
+  <%= spot.spot_information %>,
+  <%= spot.parking_area_id %>
+<% end %>
+

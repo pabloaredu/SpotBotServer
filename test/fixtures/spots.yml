@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  label: MyString
+  occupied: false
+  accessible: false
+  spot_information: MyText
+  parking_area: one
+
+two:
+  label: MyString
+  occupied: false
+  accessible: false
+  spot_information: MyText
+  parking_area: two
