@@ -7,15 +7,15 @@ class UsersController < ApplicationController
 
     @user = User.new (user_params)
     if @user.save
-      session[:user_id] = user.id
+      # session[:user_id] = user.id
       # render json: {
       #   status: 200,
       #   message: "Hello there!",
       # }.to_json
-      render status: 200, json: @controller.to_json
+      render json: @controller
 
     else
-      # redirect_to '/signup'
+      render json: @controller.errors.messages
     end
 
     # Client.new(params[:client])
