@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   def create
     params = user_params
     @user = User.new(params)
+    puts "password"
+    puts params[:password]
     @user.password = params[:password]
+    puts "password_confirmation"
+    puts params[:password_confirmation]
     @user.password_confirmation = params[:password_confirmation]
     if @user.save
       # session[:user_id] = @user.id
