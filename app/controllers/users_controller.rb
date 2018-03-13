@@ -4,19 +4,23 @@ class UsersController < ApplicationController
   end
 
   def create
-
-    Rails.logger.debug params.inspect
-
-    Rails.logger.info "This are the params: #{params}"
     @user = User.new (user_params)
     if @user.save
-      session[:user_id] = user.id
-      render json: {
-        status: 200,
-        message: "Hello there!",
-      }.to_json
+      # session[:user_id] = user.id
+      respond_to do |format|
+        format.json { status: 200, render json: @user}
+      end
+
+      # respond_to json: {
+      #   status: 200,
+      #   message: "Hello there!",
+      # }.to_json
     else
       # redirect_to '/signup'
+      # respond_to @user.errors.messages
+      respond_to do |format|
+        format.json { status: 200, render json: @user.errors.messages}
+      end
     end
 
     # Client.new(params[:client])
