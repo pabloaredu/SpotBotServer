@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     c_params = user_params
     @user = User.new(c_params)
-    c_params.each_pair |key, value| do
+    c_params.each_pair do |key, value|
       puts 'key: ' + key.to_s
       puts 'value: ' + value.to_s
     end
