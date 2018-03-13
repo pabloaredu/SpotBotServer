@@ -15,7 +15,8 @@ class UsersController < ApplicationController
       # render json: @controller
 
     else
-      render json: @controller.errors.messages
+      puts @user.errors.full_messages
+      # render json: @controller.errors.messages
     end
 
     # Client.new(params[:client])
