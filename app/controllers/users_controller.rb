@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       # session[:user_id] = user.id
       respond_to do |format|
-        format.json { status: 200, render json: @user}
+        format.json {render json: @user}
       end
 
       # respond_to json: {
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       # redirect_to '/signup'
       # respond_to @user.errors.messages
       respond_to do |format|
-        format.json { status: 200, render json: @user.errors.messages}
+        format.json {render json: @user.errors.messages}
       end
     end
 
