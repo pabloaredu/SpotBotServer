@@ -4,8 +4,14 @@ class UsersController < ApplicationController
   end
 
   def create
+    puts "params"
+    params.each_pair do |key, value|
+      puts 'key: ' + key.to_s
+      puts 'value: ' + value.to_s
+    end
     c_params = user_params
     @user = User.new(c_params)
+    puts "after creating user with c_params"
     c_params.each_pair do |key, value|
       puts 'key: ' + key.to_s
       puts 'value: ' + value.to_s
