@@ -4,8 +4,10 @@ class UsersController < ApplicationController
   end
 
   def create
-
-    @user = User.new(user_params)
+    params = user_params
+    @user = User.new(params)
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
     if @user.save
       # session[:user_id] = @user.id
       render json: {
