@@ -1,19 +1,24 @@
 class SpotsController < ApplicationController
 
   def index
-
-
-
-
     if params[:accessibility] == 'yes'
       puts 'Something happend *******************************'
-      @spots = Spot.where(accessible: true, occupied: false)
+      @spots = Spot.where(accessible: true, availability: false)
       render :index
     else params[:accessibility] == 'no'
-      @spots = Spot.where(accessible: false, occupied: false)
+      @spots = Spot.where(accessible: false, availability: false)
       render :index
     end
   end
 
+  def update
+    @spot = Spot.find(params[:id])
+  end
+
+  def reserve
+
+    @reserved_spot = Spot.find(:id)
+
+  end
 
 end

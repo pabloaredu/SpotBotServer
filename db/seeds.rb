@@ -12,34 +12,35 @@ puts "Re-creating spots ......"
 Spot.destroy_all
 alpha = north_parkade.spots.create!({
           label: 'Alpha',
-          occupied: false,
+          availability: false,
           accessible: true,
           spot_information: 'Wheel chair elevator near by'
         })
 beta = north_parkade.spots.create!({
           label: 'Beta',
-          occupied: false,
+          availability: false,
           accessible: false,
           spot_information: 'Small space no trucks'
         })
 charlie = north_parkade.spots.create!({
           label: 'Charlie',
-          occupied: false,
+          availability: false,
           accessible: false,
           spot_information: 'Back in only'
         })
 
 delta = north_parkade.spots.create!({
           label: 'Delta',
-          occupied: true,
+          availability: true,
           accessible: true,
           spot_information: 'Testing'
         })
 
 echo = north_parkade.spots.create!({
           label: 'Echo',
-          occupied: true,
+          availability: true,
           accessible: false,
           spot_information: 'Testing'
         })
+
 

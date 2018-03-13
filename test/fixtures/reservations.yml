@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reservation_status: MyText
+  spot_id: one
+  user_id: one
+
+two:
+  reservation_status: MyText
+  spot_id: two
+  user_id: two

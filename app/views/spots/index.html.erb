@@ -5,9 +5,9 @@
 
 
   <% @spots.each do |spot| %>
-<li> <%= spot.label %> , <%= spot.occupied %> ,
-  <%= spot.accessible %>,
-  <%= spot.spot_information %>,
-  <%= spot.parking_area_id %>
+<li> <%= spot.label %> | <%= spot.availability %> |
+  <%= spot.accessible %> |
+  <%= spot.spot_information %> |
+  <%= spot.parking_area_id %> |
 <% end %>
 
