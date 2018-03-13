@@ -4,23 +4,18 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user = User.new (user_params)
     if @user.save
-      # session[:user_id] = user.id
-      respond_to do |format|
-        format.json {render json: @user}
-      end
-
-      # respond_to json: {
+      session[:user_id] = user.id
+      # render json: {
       #   status: 200,
       #   message: "Hello there!",
       # }.to_json
+      render status: 200, json: @controller.to_json
+
     else
       # redirect_to '/signup'
-      # respond_to @user.errors.messages
-      respond_to do |format|
-        format.json {render json: @user.errors.messages}
-      end
     end
 
     # Client.new(params[:client])
