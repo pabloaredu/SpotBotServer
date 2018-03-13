@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
 
-    @user = User.new (user_params)
+    @user = User.new(user_params)
     if @user.save
       # session[:user_id] = @user.id
       render json: {
@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       # render json: @controller
 
     else
+      puts @user.inspect
       puts @user.errors.full_messages
       # render json: @controller.errors.messages
     end
