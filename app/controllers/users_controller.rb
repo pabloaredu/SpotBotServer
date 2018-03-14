@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       render json: {
         status: 200,
         message: "Hello there!",
-      }.to_json
+      }
       # render json: @controller
 
     else
