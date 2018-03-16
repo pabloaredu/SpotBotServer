@@ -3,3 +3,7 @@
 require_relative 'config/environment'
 
 run Rails.application
+
+# $stdout.sync = true
+
+# config.logger = Logger.new(STDOUT)
