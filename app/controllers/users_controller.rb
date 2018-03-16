@@ -1,31 +1,20 @@
 class UsersController < ApplicationController
-
   def new
   end
 
   def create
-
     @user = User.new(user_params)
     if @user.save
-      # session[:user_id] = @user.id
-      render json: {
-        status: 200,
-        message: "Hello there!",
-      }
-      # render json: @controller
-
+      # session[:user_id] = user.id
+      render json: {"email": user_params[:email], "password": user_params[:password]}
     else
-      puts @user.errors.full_messages
-      # render json: @controller.errors.messages
+      render json: { status: 422, error: @user.errors }
     end
-
-    # Client.new(params[:client])
-
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :license_plate, :password, :password_confirmation, :email)
+    params.require(:user).permit(:name, :license_plate, :email, :password, :password_confirmation)
   end
 end
