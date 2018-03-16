@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope '/api' do
+  scope '/' do
     resources :sessions
     post 'user_token' => 'user_token#create'
   end
