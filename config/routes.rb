@@ -2,14 +2,13 @@ Rails.application.routes.draw do
 
   resources :parking_areas, only: [:index]
 
-  resources :spots, only: [:index, :update]
+  resources :spots, only: [:index, :update] do
+    resources :reservations, only: [:create, :update]
+  end
 
   resources :faqs, only: [:index]
 
   resources :my_account, only: [:index]
-
-
-  resources :reservations, only: [:create, :update]
 
   get 'main/index'
 

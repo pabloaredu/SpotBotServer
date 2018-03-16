@@ -9,8 +9,10 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       # Save the user id inside the browser cookie. This is how we keep the user
       # logged in when they navigate around our website.
+      payload = { user_ id: user.id}
+      token = JWT.encode(payload, "spotbot")
       session[:user_id] = user.id
-      redirect_to '/'
+      render json: {user: user, jwt: token}
     else
     # If user's login doesn't work, send them back to the login form.
       redirect_to '/login'

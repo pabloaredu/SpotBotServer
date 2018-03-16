@@ -7,7 +7,7 @@ class SpotsController < ApplicationController
       render :index
     else params[:accessibility] == 'no'
       @spots = Spot.where(accessible: false, availability: false)
-      render :index
+
     end
   end
 

@@ -43,4 +43,6 @@ echo = north_parkade.spots.create!({
           spot_information: 'Testing'
         })
 
+User.create(email: 'aaa', password: 'aaa', password_confirmation: 'aaa')
+puts "Re-creating a user ......"
 
