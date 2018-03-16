@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  scope '/' do
-    resources :sessions
-    post 'user_token' => 'user_token#create'
-  end
-  # get 'main/index'
+  # scope '/api' do
+    # resources :sessions
+  post 'user_token' => 'user_token#create'
+  # end
+  get 'main/index'
 
-  # root 'main#index'
+
+  root 'main#index'
 
 # This route sends requests to our naked url to the *cool* action in the *gif* controller.
   mount Knock::Engine => "/knock"
