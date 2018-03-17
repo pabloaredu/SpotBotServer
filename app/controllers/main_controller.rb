@@ -1,16 +1,19 @@
 class MainController < ApplicationController
 
   def index
-    arr_pa_and_spots = []
-    @parking_areas = ParkingArea.all
-    @parking_areas.each do |parking_area|
-      puts parking_area.id
-      spots = Spot.where(:parking_area_id => parking_area[:id])
-      parking_area['spots'] = spots
+    @arr_pa_and_slots = Array.new
+    data = Hash.new
+    @parking_areas = ParkingArea.all # get all the parking areas
 
-      arr_pa_and_spots.push(parking_area)
+    @parking_areas.each do |parking_area|
+      @spots = parking_area.spots
+      hash = {
+        :parking_area => parking_area,
+        :spots => @spots
+      }
+      @arr_pa_and_slots.push(hash)
     end
-    render :json => {:parking_areas => arr_pa_and_spots}
+    render :json => {:parking_areas => @arr_pa_and_slots}
   end
 end
 
