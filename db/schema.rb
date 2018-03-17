@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310000748) do
+ActiveRecord::Schema.define(version: 20180316205138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,19 @@ ActiveRecord::Schema.define(version: 20180310000748) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.text "reservation_status"
+    t.bigint "spot_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_reservations_on_spot_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "spots", force: :cascade do |t|
     t.string "label"
-    t.boolean "occupied"
+    t.boolean "availability"
     t.boolean "accessible"
     t.text "spot_information"
     t.bigint "parking_area_id"
@@ -53,5 +63,7 @@ ActiveRecord::Schema.define(version: 20180310000748) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "reservations", "spots"
+  add_foreign_key "reservations", "users"
   add_foreign_key "spots", "parking_areas"
 end
