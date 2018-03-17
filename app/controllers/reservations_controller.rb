@@ -2,25 +2,27 @@ class ReservationsController < ApplicationController
 
   def create
 
-  spot = Spot.find_by(id: params[:spot_id])
+    spot = Spot.find_by(id: params[:spot_id])
 
-  reservation = spot.reservations.new(reservation_params)
-  reservation.user_id = 1
+    reservation = spot.reservations.new(reservation_params)
+    reservation.user_id = 1
 
-  if reservation.save!
-    spot.update(availability: false)
-    arr_pa_and_slots = []
-    data = Hash.new
-    @parking_areas = ParkingArea.all # get all the parking areas
-    @parking_areas.each do |parking_area|
-      @spots = parking_area.spots
-     data[:parking_area] = parking_area
-     data[:spots] = @spots
-     arr_pa_and_slots.push(data)
-    end
-   render :json => {:parking_areas => arr_pa_and_slots}
-  end
+    if reservation.save!
+      spot.update(availability: false)
+      @arr_pa_and_slots = Array.new
+      data = Hash.new
+      @parking_areas = ParkingArea.all # get all the parking areas
 
+      @parking_areas.each do |parking_area|
+        @spots = parking_area.spots
+        hash = {
+          :parking_area => parking_area,
+          :spots => @spots
+        }
+        @arr_pa_and_slots.push(hash)
+      end
+      render :json => {:parking_areas => @arr_pa_and_slots}
+      end
   end
 
   def update
