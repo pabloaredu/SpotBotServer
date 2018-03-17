@@ -13,3 +13,4 @@ class MainController < ApplicationController
     render :json => {:parking_areas => arr_pa_and_slots}
   end
 end
+

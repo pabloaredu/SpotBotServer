@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20180316205138) do
 
   create_table "spots", force: :cascade do |t|
     t.string "label"
-    t.boolean "occupied"
+    t.boolean "availability"
     t.boolean "accessible"
     t.text "spot_information"
     t.bigint "parking_area_id"
