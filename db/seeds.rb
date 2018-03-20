@@ -37,62 +37,62 @@ echo = north_parkade.spots.create!({
         })
 # WEST PARKADE PARKING SPOTS
 alpha = west_parkade.spots.create!({
-          label: 'Alpha',
+          label: 'Gamma',
           availability: true,
           accessible: true,
           spot_information: 'Wheel chair elevator near by'
         })
 beta = west_parkade.spots.create!({
-          label: 'Beta',
+          label: 'Zeta',
           availability: true,
           accessible: false,
           spot_information: 'Small space no trucks'
         })
 charlie = west_parkade.spots.create!({
-          label: 'Charlie',
+          label: 'Theta',
           availability: true,
           accessible: false,
           spot_information: 'Back in only'
         })
 delta = west_parkade.spots.create!({
-          label: 'Delta',
+          label: 'Kappa',
           availability: true,
           accessible: true,
           spot_information: 'Testing'
         })
 echo = west_parkade.spots.create!({
-          label: 'Echo',
+          label: 'Lamba',
           availability: true,
           accessible: false,
           spot_information: 'Testing'
         })
 # THUNDERBIRD PARKADE PARKING SPOTS
 alpha = thunderbird_parkade.spots.create!({
-          label: 'Alpha',
+          label: 'Sigma',
           availability: true,
           accessible: true,
           spot_information: 'Wheel chair elevator near by'
         })
 beta = thunderbird_parkade.spots.create!({
-          label: 'Beta',
+          label: 'PI',
           availability: true,
           accessible: false,
           spot_information: 'Small space no trucks'
         })
 charlie = thunderbird_parkade.spots.create!({
-          label: 'Charlie',
+          label: 'Omega',
           availability: true,
           accessible: false,
           spot_information: 'Back in only'
         })
 delta = thunderbird_parkade.spots.create!({
-          label: 'Delta',
+          label: 'Omicron',
           availability: true,
           accessible: true,
           spot_information: 'Testing'
         })
 echo = thunderbird_parkade.spots.create!({
-          label: 'Echo',
+          label: 'Iota',
           availability: true,
           accessible: false,
           spot_information: 'Testing'
