@@ -18,6 +18,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'loofah', '~> 2.2.1'
+
 gem 'rails_12factor'
 
 gem 'rack-cors', :require => 'rack/cors'
