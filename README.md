@@ -1,24 +1,20 @@
-# README
+# SpotBot Server side app for running [SpotBot](https://github.com/DercilioFontes/SpotBot4)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
 
-Things you may want to cover:
+* Ruby
+* Gem
+* Bundler
 
-* Ruby version
+## Getting started
 
-* System dependencies
+Clone this repo, then run Bundle install from the project directory.
 
-* Configuration
+Next, run rails db:create, rails db:migrate, and rails db:seed to set up the database.
 
-* Database creation
+Next, run rails s to start up the server, and ensure it is running on local host 3000 by navigating to the browser. 
 
-* Database initialization
+## Built With
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* [Ruby on Rails](http://rubyonrails.org)
+* [PostGres](https://www.postgresql.org)
