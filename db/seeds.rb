@@ -6,94 +6,94 @@ puts "Re-creating spots ......"
 Spot.destroy_all
 # NORTH PARKADE PARKING SPOTS
 alpha = north_parkade.spots.create!({
-          label: 'Alpha',
+          label: '5667 - 123',
           availability: true,
           accessible: true,
-          spot_information: 'Wheel chair elevator near by'
+          spot_information: 'L1, Elevator 100m away'
         })
 beta = north_parkade.spots.create!({
-          label: 'Beta',
+          label: '5667 - 234',
           availability: true,
           accessible: false,
-          spot_information: 'Small space no trucks'
+          spot_information: 'L2, Small cars only'
         })
 charlie = north_parkade.spots.create!({
-          label: 'Charlie',
+          label: '5667 - 524',
           availability: true,
           accessible: false,
-          spot_information: 'Back in only'
+          spot_information: 'L5'
         })
 delta = north_parkade.spots.create!({
-          label: 'Delta',
+          label: '5667 - 122',
           availability: true,
           accessible: true,
-          spot_information: 'Testing'
+          spot_information: 'L1, Elevator 400m away'
         })
 echo = north_parkade.spots.create!({
-          label: 'Echo',
+          label: '5667 - 322',
           availability: true,
           accessible: false,
-          spot_information: 'Testing'
+          spot_information: 'L3, Back in only'
         })
 # WEST PARKADE PARKING SPOTS
 alpha = west_parkade.spots.create!({
-          label: 'Gamma',
-          availability: true,
+          label: '5671 - 145',
+          availability: false,
           accessible: true,
-          spot_information: 'Wheel chair elevator near by'
+          spot_information: 'L1, Elevator 100m away'
         })
 beta = west_parkade.spots.create!({
-          label: 'Zeta',
-          availability: true,
+          label: '5671 - 245',
+          availability: false,
           accessible: false,
-          spot_information: 'Small space no trucks'
+          spot_information: 'L2'
         })
 charlie = west_parkade.spots.create!({
-          label: 'Theta',
-          availability: true,
+          label: '5671 - 244',
+          availability: false,
           accessible: false,
-          spot_information: 'Back in only'
+          spot_information: 'L2'
         })
 delta = west_parkade.spots.create!({
-          label: 'Kappa',
-          availability: true,
+          label: '5671 - 144',
+          availability: false,
           accessible: true,
-          spot_information: 'Testing'
+          spot_information: 'L1, Elevator 100m away'
         })
 echo = west_parkade.spots.create!({
-          label: 'Lamba',
-          availability: true,
+          label: '5671 - 146',
+          availability: false,
           accessible: false,
-          spot_information: 'Testing'
+          spot_information: 'L1'
         })
 # THUNDERBIRD PARKADE PARKING SPOTS
 alpha = thunderbird_parkade.spots.create!({
-          label: 'Sigma',
+          label: '5677 - 167',
           availability: true,
           accessible: true,
-          spot_information: 'Wheel chair elevator near by'
+          spot_information: 'L1, Elevator 25m away'
         })
 beta = thunderbird_parkade.spots.create!({
-          label: 'PI',
-          availability: true,
+          label: '5677 - 176',
+          availability: false,
           accessible: false,
-          spot_information: 'Small space no trucks'
+          spot_information: 'L1'
         })
 charlie = thunderbird_parkade.spots.create!({
-          label: 'Omega',
-          availability: true,
+          label: '5667 - 176',
+          availability: false,
           accessible: false,
-          spot_information: 'Back in only'
+          spot_information: 'L1'
         })
 delta = thunderbird_parkade.spots.create!({
-          label: 'Omicron',
-          availability: true,
+          label: '5667 - 174',
+          availability: false,
           accessible: true,
-          spot_information: 'Testing'
+          spot_information: 'L1'
         })
 echo = thunderbird_parkade.spots.create!({
-          label: 'Iota',
-          availability: true,
+          label: '5667 - 179',
+          availability: false,
           accessible: false,
-          spot_information: 'Testing'
+          spot_information: 'L1'
         })
